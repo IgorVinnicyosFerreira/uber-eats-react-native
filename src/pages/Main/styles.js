@@ -1,11 +1,13 @@
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {FlatList} from 'react-native';
+
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #ebebeb;
   justify-content: flex-start;
@@ -21,4 +23,8 @@ export const DropdownIcon = styled(ArrowIcon).attrs({
   name: 'arrow-down-drop-circle-outline',
 })`
   font-size: ${hp('2.8%')};
+`;
+
+export const MarginContainer = styled.View`
+  padding-left: ${wp('4%')}px;
 `;

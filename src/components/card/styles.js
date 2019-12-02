@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Touchable from 'react-native-platform-touchable';
 
 import {
   widthPercentageToDP as wp,
@@ -7,8 +8,11 @@ import {
 } from 'react-native-responsive-screen';
 
 export const Container = styled.View`
-  height: ${props => (props.height ? `${props.height}` : hp('38%'))}px;
+  height: ${props => (props.height ? `${props.height}` : hp('37%'))}px;
   width: ${props => (props.width ? `${props.with}` : wp('82%'))}px;
+  margin-left: ${wp('3%')}px;
+  margin-right: ${hp('1%')}px;
+  margin-vertical: ${hp('2%')}px;
   justify-content: flex-start;
   padding: ${hp('1%')}px;
   border-radius: ${hp('0.5%')}px;
@@ -83,5 +87,9 @@ export const InfoText = styled(TagText)`
 `;
 
 export const InfoContainer = styled(TagContainer)`
+  align-items: center;
+`;
+
+export const CategoryContainer = styled(TagContainer)`
   align-items: center;
 `;

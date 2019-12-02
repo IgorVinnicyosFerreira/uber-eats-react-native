@@ -12,32 +12,41 @@ import {
   InfoText,
   InfoContainer,
   CircleSmall,
+  CategoryContainer,
 } from './styles';
 
-const Card = () => (
-  <Container>
-    <Image
-      source={require('../../assets/images/restaurants/acai-online.jpg')}
-    />
-    <DescriptionContainer>
-      <Title>Tigela grande</Title>
-      <InfoContainer>
-        <InfoText>$</InfoText>
-        <CircleSmall />
-        <InfoText>Chinese </InfoText>
-      </InfoContainer>
-      <TagContainer>
-        <Tag>
-          <TagText>35-40 Min</TagText>
-        </Tag>
-        <Tag>
-          <TagText>4.7</TagText>
-          <Star />
-          <InfoText>(152)</InfoText>
-        </Tag>
-      </TagContainer>
-    </DescriptionContainer>
-  </Container>
-);
+const renderRestaurantCard = restaurant => {
+  const avaluation = Math.random() * 5;
+  const avaluationAmount = Math.ceil(Math.random() * 200);
+  return (
+    <Container>
+      <Image source={restaurant.photo} />
+      <DescriptionContainer>
+        <Title>{restaurant.name}</Title>
+        <InfoContainer>
+          <InfoText>$</InfoText>
+          {restaurant.categories.map(category => (
+            <CategoryContainer key={`${restaurant.id}.${category}`}>
+              <CircleSmall />
+              <InfoText>{category}</InfoText>
+            </CategoryContainer>
+          ))}
+        </InfoContainer>
+        <TagContainer>
+          <Tag>
+            <TagText>{restaurant.deliveryTime}</TagText>
+          </Tag>
+          <Tag>
+            <TagText>{avaluation < 3 ? 3.7 : avaluation.toFixed(1)}</TagText>
+            <Star />
+            <TagText>({avaluationAmount})</TagText>
+          </Tag>
+        </TagContainer>
+      </DescriptionContainer>
+    </Container>
+  );
+};
+
+const Card = ({content, cardType}) => renderRestaurantCard(content);
 
 export default Card;
