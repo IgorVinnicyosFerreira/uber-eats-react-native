@@ -1,25 +1,22 @@
 import React from 'react';
-
-import {View, StyleSheet, Dimensions} from 'react-native';
 import Card from '~/components/card';
 import Section from '~/components/section';
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#EBEBEB',
-    flex: 1,
-    paddingHorizontal: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import Header from '~/components/header';
+import {Container, ArrowIcon, DropdownIcon} from './styles';
+import {HeaderText} from '~/components/header/styles';
 
 const Main = () => (
-  <View style={styles.container}>
+  <Container>
+    <Header>
+      <HeaderText>ASAP</HeaderText>
+      <ArrowIcon />
+      <HeaderText>R. Fulano de tal Lot Lorem, 105</HeaderText>
+      <DropdownIcon />
+    </Header>
     <Section title="Popular Near You" subtitle="The fastest food to your door">
       <Card />
     </Section>
-  </View>
+  </Container>
 );
 
 export default Main;
