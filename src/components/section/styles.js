@@ -10,6 +10,8 @@ export const Container = styled.View`
   background-color: #fff;
   padding-top: ${hp('3%')}px;
   padding-bottom: ${hp('5%')}px;
+  margin-bottom: ${hp('0.5%')}px;
+  margin-top: ${hp('1.2%')}px;
 `;
 
 export const Title = styled.Text`

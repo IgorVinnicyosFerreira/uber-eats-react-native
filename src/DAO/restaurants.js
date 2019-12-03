@@ -3,7 +3,7 @@ import restaurantsList from '../data/restaurants';
 export const getRestaurants = (page = 1, pageSize = 6) => {
   const startIndex = page * pageSize - pageSize;
 
-  return restaurantsList.slice(startIndex, pageSize);
+  return restaurantsList.slice(startIndex, page * pageSize);
 };
 
 export const findById = id => {
@@ -25,4 +25,6 @@ export const getRandomRestaurants = restaurantsAmount => {
       restaurantsAmount--;
     }
   }
+
+  return restaurants;
 };

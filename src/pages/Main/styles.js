@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {FlatList} from 'react-native';
 
 import {
   heightPercentageToDP as hp,

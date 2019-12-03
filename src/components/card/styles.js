@@ -8,11 +8,8 @@ import {
 } from 'react-native-responsive-screen';
 
 export const Container = styled.View`
-  height: ${props => (props.height ? `${props.height}` : hp('37%'))}px;
-  width: ${props => (props.width ? `${props.with}` : wp('82%'))}px;
-  margin-left: ${wp('3%')}px;
-  margin-right: ${hp('1%')}px;
-  margin-vertical: ${hp('2%')}px;
+  height: ${hp('38%')}px;
+  width: ${wp('80%')}px;
   justify-content: flex-start;
   padding: ${hp('1%')}px;
   border-radius: ${hp('0.5%')}px;
@@ -24,6 +21,15 @@ export const Container = styled.View`
   elevation: 5;
 `;
 
+export const FoodContainer = styled(Container)`
+  height: ${hp('36%')}px;
+  width: ${wp('71%')}px;
+`;
+export const LargerContainer = styled(Container)`
+  height: ${hp('40%')}px;
+  width: ${wp('96%')}px;
+`;
+
 export const DescriptionContainer = styled.View`
   height: 30%;
   margin-top: ${hp('2.5%')}px;
@@ -33,7 +39,7 @@ export const DescriptionContainer = styled.View`
 `;
 
 export const Image = styled.Image`
-  height: 56%;
+  height: 58%;
   width: 100%;
   resize-mode: cover;
   border-radius: ${hp('0.5%')}px;
@@ -44,10 +50,12 @@ export const Title = styled.Text`
   font-size: ${hp('2.2%')};
   color: #272727;
   font-weight: 100;
+  margin-bottom: ${hp('0.5%')}px;
 `;
 
 export const TagContainer = styled.View`
   flex-direction: row;
+  margin-top: ${hp('1%')}px;
 `;
 
 export const Tag = styled.View`
@@ -83,13 +91,16 @@ export const CircleSmall = styled(Icon).attrs(props => ({
 `;
 
 export const InfoText = styled(TagText)`
+  margin-top: ${hp('0.5%')}px;
   opacity: 0.6;
 `;
 
 export const InfoContainer = styled(TagContainer)`
   align-items: center;
+  margin-top: 0px;
 `;
 
 export const CategoryContainer = styled(TagContainer)`
   align-items: center;
+  margin-top: 0px;
 `;

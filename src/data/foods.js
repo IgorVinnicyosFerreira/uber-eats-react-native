@@ -1,0 +1,58 @@
+export default [
+  {
+    id: 1,
+    name: 'Buger',
+    preparationTime: '20 - 30 Min',
+    price: 18.0,
+    photo: require('../assets/images/foods/burger-on-plate.jpg'),
+  },
+  {
+    id: 2,
+    name: 'Meal and white wine',
+    preparationTime: '10 - 15 Min',
+    price: 70.0,
+    photo: require('../assets/images/foods/gourmet-meal-and-white-wine.jpg'),
+  },
+  {
+    id: 3,
+    name: 'Pancakes with orange',
+    preparationTime: '25 - 40 Min',
+    price: 30.5,
+    photo: require('../assets/images/foods/pancakes-with-orange-and-blueberry.jpg'),
+  },
+  {
+    id: 4,
+    name: 'Pizza',
+    preparationTime: '40 - 110 Min',
+    price: 50.0,
+    photo: require('../assets/images/foods/pizza.jpg'),
+  },
+  {
+    id: 5,
+    name: 'Pancakes',
+    preparationTime: '25 - 45 Min',
+    price: 25.0,
+    photo: require('../assets/images/foods/pancakes.jpg'),
+  },
+  {
+    id: 6,
+    name: 'Pork chop dinner',
+    preparationTime: '35 - 55 Min',
+    price: 78.0,
+    photo: require('../assets/images/foods/pork-chop-dinner.jpg'),
+  },
+  {
+    id: 7,
+    name: 'Sandwich',
+    preparationTime: '20 - 25 Min',
+    price: 15.0,
+    photo: require('../assets/images/foods/sandwich.jpg'),
+  },
+  {
+    id: 8,
+    name: 'Yogurt bowl',
+    preparationTime: '15 - 25 Min',
+    price: 17.0,
+    photo: require('../assets/images/foods/yogurt-bowl.jpg'),
+  },
+];

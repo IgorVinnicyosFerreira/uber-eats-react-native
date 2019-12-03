@@ -8,7 +8,7 @@ import {
 
 export const Container = styled.View`
   height: ${hp('37%')}px;
-  width: ${wp('65%')}px;
+  width: ${wp('60%')}px;
   margin-vertical: ${hp('2%')}px;
   justify-content: center;
   align-items: center;
