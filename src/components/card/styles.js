@@ -29,6 +29,13 @@ export const LargerContainer = styled(Container)`
   height: ${hp('40%')}px;
   width: ${wp('96%')}px;
 `;
+export const LargerContainerWithoutElevation = styled(LargerContainer)`
+  shadow-color: #00000000;
+  shadow-offset: 0px 0px;
+  shadow-opacity: 0;
+  shadow-radius: 0;
+  elevation: 0;
+`;
 
 export const DescriptionContainer = styled.View`
   height: 30%;

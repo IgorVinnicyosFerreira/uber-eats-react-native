@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
-import Card, {FOOD_CARD, RESTAURANT_LARGER_CARD} from '~/components/card';
+import Card, {
+  FOOD_CARD,
+  RESTAURANT_LARGER_CARD,
+  RESTAURANT_LARGER_CARD_WITHOUT_ELEVATION,
+} from '~/components/card';
 import Section from '~/components/section';
 import Header from '~/components/header';
 import {Container, ArrowIcon, DropdownIcon} from './styles';
@@ -12,6 +16,7 @@ import CardWrapper from '~/components/cardWrapper';
 import {getFoods} from '~/DAO/foods';
 import ListHeader from '~/components/listHeader';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import Banner from '~/components/banner';
 
 const HEADER_HEIGHT = Platform.select({ios: hp('8%') + 20, android: hp('8%')});
 const LIST_HEADER_HEIGHT = hp('7.5%') + HEADER_HEIGHT;
@@ -25,6 +30,7 @@ export default class Main extends Component {
     const whenYrHungryNowList = getRestaurants(2);
     const recommendedDishesList = getFoods();
     const newOnUberEats = getRandomRestaurants(1)[0];
+    const randomRestaurantsList = getRandomRestaurants(8);
 
     this.state = {
       scrollAnim,
@@ -45,6 +51,7 @@ export default class Main extends Component {
       whenYrHungryNowList,
       recommendedDishesList,
       newOnUberEats,
+      randomRestaurantsList,
     };
   }
 
@@ -52,6 +59,16 @@ export default class Main extends Component {
     return (
       <CardWrapper {...this.cardWrapperProps(index, list)}>
         <Card content={restaurant} />
+      </CardWrapper>
+    );
+  }
+  renderRestaurantCardWithoutElevation(restaurant) {
+    return (
+      <CardWrapper key={`${restaurant.id}-w-elev`}>
+        <Card
+          content={restaurant}
+          cardType={RESTAURANT_LARGER_CARD_WITHOUT_ELEVATION}
+        />
       </CardWrapper>
     );
   }
@@ -125,6 +142,9 @@ export default class Main extends Component {
           }
           keyExtractor={item => `${item.id}`}
         />
+        {this.state.randomRestaurantsList.map(item =>
+          this.renderRestaurantCardWithoutElevation(item),
+        )}
       </Section>
     );
   }
@@ -166,6 +186,7 @@ export default class Main extends Component {
             [{nativeEvent: {contentOffset: {y: this.state.scrollAnim}}}],
             {useNativeDriver: true},
           )}>
+          <Banner />
           {this.popularNearYouSection()}
           {this.newOnUberEatsSection()}
           {this.whenYrHungryNowSection()}
