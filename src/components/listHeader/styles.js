@@ -4,9 +4,17 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
-export const Container = styled.View`
+import {Animated} from 'react-native';
+export const Container = styled(Animated.View).attrs(props => {
+  return {
+    style: {
+      transform: props.style.transform,
+    },
+  };
+})`
   width: ${wp('100%')}px;
+  position: absolute;
+  top: ${hp('8%')}px;
   height: ${hp('7.5%')}px;
   background-color: #fff;
   flex-direction: row;
@@ -14,6 +22,11 @@ export const Container = styled.View`
   justify-content: space-between;
   padding-left: ${wp('5.5%')}px;
   padding-right: ${wp('1.5%')}px;
+  shadow-color: #000;
+  shadow-offset: 0px 2px;
+  shadow-opacity: 0.25;
+  shadow-radius: 3.84;
+  elevation: 5;
 `;
 
 export const Tag = styled.View`

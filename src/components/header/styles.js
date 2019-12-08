@@ -4,8 +4,9 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 
+import {Platform} from 'react-native';
 export const Container = styled.View`
-  height: ${hp('8%')}px;
+  height: ${Platform.select({ios: hp('8%') + 20, android: hp('8%')})}px;
   width: ${wp('100%')}px;
   background-color: #fff;
   flex-direction: row;
@@ -13,10 +14,10 @@ export const Container = styled.View`
   align-items: center;
   padding-horizontal: ${wp('4%')}px;
   shadow-color: #000;
-  shadow-offset: 0px 2px;
-  shadow-opacity: 0.25;
-  shadow-radius: 3.84;
-  elevation: 5;
+  shadow-offset: 0px 3px;
+  shadow-opacity: 0.29;
+  shadow-radius: 4.65;
+  elevation: 7;
 `;
 
 export const HeaderText = styled.Text`
